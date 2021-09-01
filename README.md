@@ -7,4 +7,4 @@ Theory of Relativity
 - Stored Solutions (Schwarzschild, Rindler, & Sphere)
 - Spacetime Coordinate Transformation (Galilean & Lorentz)
 
-![alt text](https://github.com/OmarHzmMashal/relativityPy/pic.png?raw=true)
+![alt text](https://github.com/OmarHzmMashal/relativityPy/tensors.png?raw=true)
