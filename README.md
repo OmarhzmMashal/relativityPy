@@ -1,7 +1,5 @@
 # relativityPy
 
-![alt text](https://github.com/OmarhzmMashal/relativityPy/blob/main/tensors.png)
-
 - Christoffel symbols (Torsion free)
 - Riemann Tensor
 - Ricci Tensor
@@ -46,3 +44,5 @@ coor_transformer = CoordinateTransformation(velocity=[0.9*c, 0, 0])
 lorentz_transformed_vector = coor_transformer.lorentzT(vector=[1,0,0,0])
 galilean_transformed_vector = coor_transformer.galileanT(vector=[1,0,0,0])
 ```
+
+![alt text](https://github.com/OmarhzmMashal/relativityPy/blob/main/tensors.png)
