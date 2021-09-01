@@ -35,4 +35,14 @@ riemann_tensor_for_sphere = RiemannManifoldSolution().sphere(returned_tensor="ri
 ```
 
 - Spacetime Coordinate Transformation (Galilean & Lorentz)
+```
+# init trnasformer with a velocity vector
+c = 299792458
 
+# input velocity vector [Vx, Vy, Vz]
+coor_transformer = CoordinateTransformation(velocity=[0.9*c, 0, 0])
+
+# input spacetime vector [t, x, y, z]
+lorentz_transformed_vector = coor_transformer.lorentzT(vector=[1,0,0,0])
+galilean_transformed_vector = coor_transformer.galileanT(vector=[1,0,0,0])
+```
