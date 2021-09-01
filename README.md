@@ -29,7 +29,7 @@ ricci_scalar = rm.getRicciScalar(printstr=True)
 - Stored Solutions (Schwarzschild, Rindler, & Sphere)
 ```
 # sphere solution
-riemann_tensor_for_sphere = RiemannManifoldSolution().sphere(returned_tensor="ricciscalar", printstr=True) 
+riemann_tensor_for_sphere = RiemannManifoldSolution().sphere(returned_tensor="riemann", printstr=True) 
 ```
 
 - Spacetime Coordinate Transformation (Galilean & Lorentz)
