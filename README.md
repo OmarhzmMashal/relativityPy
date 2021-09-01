@@ -1,5 +1,4 @@
 # relativityPy
-Theory of Relativity
 
 - Christoffel symbols (Torsion free)
 - Riemann Tensor
