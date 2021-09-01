@@ -1,8 +1,9 @@
 # relativityPy
 
 - Christoffel Symbols (Torsion free)
-- Riemann Tensor
-- Ricci Tensor
+- Riemann Tensor (rank 4 tensor)
+- Ricci Tensor (rank 2 tensor)
+- Ricci Scalar (rank 0 tensor)
 
 ```
 # define paramaters
