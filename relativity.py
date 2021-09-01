@@ -113,6 +113,25 @@ class RiemannManifold:
         return tensor_components
     
     
+    def getRicciScalar(self, printstr=False):
+        
+        ricci_scalar = 0
+        
+        rt = self.getRicciTensor()
+
+        for i in range(self.d):
+            for j in range(self.d):
+
+                ricci_scalar += Matrix(self.metric).inv(method="LU")[i,j] * rt[i][j] 
+
+
+        if printstr == True:
+            R = "R = {}".format(ricci_scalar)
+            print(R)  
+                          
+        return ricci_scalar
+    
+    
 class RiemannManifoldSolution:
     
     def __init__(self):
@@ -136,6 +155,9 @@ class RiemannManifoldSolution:
         elif returned_tensor == "ricci":
             return rm.getRicciTensor(printstr)
 
+        elif returned_tensor=="ricciscalar":
+            return rm.getRicciScalar(printstr)
+        
 
     def rindler(self, returned_tensor="riemann", printstr=False):
 
@@ -154,6 +176,9 @@ class RiemannManifoldSolution:
             
         elif returned_tensor == "ricci":
             return rm.getRicciTensor(printstr)
+
+        elif returned_tensor=="ricciscalar":
+            return rm.getRicciScalar(printstr)
         
     
     def sphere(self, returned_tensor="riemann", printstr=False):
@@ -173,7 +198,10 @@ class RiemannManifoldSolution:
             
         elif returned_tensor == "ricci":
             return rm.getRicciTensor(printstr)
-        
+
+        elif returned_tensor=="ricciscalar":
+            return rm.getRicciScalar(printstr)
+
 
     def euclidean(self, returned_tensor="riemann", printstr=False):
 
@@ -191,7 +219,10 @@ class RiemannManifoldSolution:
             return  rm.getChristoffelSymbols(printstr)
             
         elif returned_tensor == "ricci":
-            return rm.getRicciTensor(printstr)    
+            return rm.getRicciTensor(printstr) 
+        
+        elif returned_tensor=="ricciscalar":
+            return rm.getRicciScalar(printstr)
 
 
 class CoordinateTransformation:
@@ -227,22 +258,3 @@ class CoordinateTransformation:
               [self.v3, 0, 0, 1]] 
         
         return Matrix(gB) * Matrix(vector) 
-
-
-
-# define paramaters
-M, t, theta, r, phi= symbols(" M t theta r phi")
-metric = [[-(1-2*M/r),0,0,0], [0,1/(1-2*M/r),0,0], [0,0,r**2,0], [0,0,0,r**2*sin(theta)**2]]
-coor = [t,r,theta,phi]
-
-# initilaze manifold; coordinates order must match the metric's
-rm = RiemannManifold(coor, metric)
-
-# calculate christoffel symbols (Levi-Civita connection)
-christoffel_symbols = rm.getChristoffelSymbols(printstr=True)
-
-# calculate riemann tensor
-riemann_tensor = rm.getRiemannTensor(printstr=True)
-
-# stored solutions
-riemann_tensor_for_sphere = RiemannManifoldSolution().sphere(returned_tensor="riemann", printstr=True) 
