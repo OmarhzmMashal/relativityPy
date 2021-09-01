@@ -1,6 +1,6 @@
 # relativityPy
 
-- Christoffel symbols (Torsion free)
+- Christoffel Symbols (Torsion free)
 - Riemann Tensor
 - Ricci Tensor
 
