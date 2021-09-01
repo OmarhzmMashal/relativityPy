@@ -1,5 +1,7 @@
 # relativityPy
 
+![alt text](https://github.com/OmarhzmMashal/relativityPy/blob/main/tensors.png)
+
 - Christoffel symbols (Torsion free)
 - Riemann Tensor
 - Ricci Tensor
@@ -18,9 +20,19 @@ christoffel_symbols = rm.getChristoffelSymbols(printstr=True)
 
 # calculate riemann tensor
 riemann_tensor = rm.getRiemannTensor(printstr=True)
+
+# calculate ricci tensor
+ricci_tensor = rm.getRicciTensor(printstr=True)
+
+# calculate ricci scalar
+ricci_scalar = rm.getRicciScalar(printstr=True)
 ```
 
 - Stored Solutions (Schwarzschild, Rindler, & Sphere)
+```
+# sphere solution
+riemann_tensor_for_sphere = RiemannManifoldSolution().sphere(returned_tensor="ricciscalar", printstr=True) 
+```
+
 - Spacetime Coordinate Transformation (Galilean & Lorentz)
 
-![alt text](https://github.com/OmarhzmMashal/relativityPy/blob/main/tensors.png)
